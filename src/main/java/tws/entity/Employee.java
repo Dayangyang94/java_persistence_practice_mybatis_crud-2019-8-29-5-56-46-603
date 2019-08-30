@@ -41,9 +41,16 @@ public class Employee implements Serializable {
         this.age = age;
     }
 
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", age=" + age + "]";
-	}
-    
+    public String getEmplyeeWithDesc(){
+        return "name:"+this.name+",age:"+this.age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                '}';
+    }
 }
