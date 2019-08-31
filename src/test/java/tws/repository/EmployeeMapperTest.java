@@ -1,5 +1,6 @@
 package tws.repository;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,15 +25,14 @@ public class EmployeeMapperTest {
     void tearDown() {
 
     }
+    @Test
     public void insertTest(){
         //given
-        jdbcTemplate.execute("insert into employee('id','name','age') values ('1','zhangsan','23')");
+        jdbcTemplate.execute("insert into employee values ('1','zhangsan','23')");
         //when
         List<Employee> employees=employeeMapper.selectAllEmployee();
         //then
         assertEquals(1,employees.size());
-
-
     }
 
 
